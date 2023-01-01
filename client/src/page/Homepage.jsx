@@ -74,7 +74,7 @@ function Homepage() {
         )}
         {isLoading ? (
           <Loading /> 
-        ) : jobs.length < 1 ? (
+        ) : jobs?.length < 1 ? (
           <div>
             <h1 className="text-3xl font-black">No Jobs found</h1>
           </div>
