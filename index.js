@@ -24,10 +24,10 @@ app.use(express.static(path.join(__dirname, 'client/build')))
 
 
 // Routes
-app.use("/user", user)
-app.use("/auth", auth)
-app.use("/job", job)
-app.use("/admin", admin)
+app.use("user", user)
+app.use("auth", auth)
+app.use("job", job)
+app.use("admin", admin)
 
 // when page not found
 app.use("", (req,res,next) => {
