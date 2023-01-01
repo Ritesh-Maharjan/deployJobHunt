@@ -19,9 +19,9 @@ function Homepage() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const data = await getAllJobs(search, token);
+      const resData = await getAllJobs(search, token);
       setIsLoading(false);
-      setJobs(data.data.jobs);
+      setJobs(resData?.data?.jobs);
     };
     fetchData();
   }, [search, token]);
