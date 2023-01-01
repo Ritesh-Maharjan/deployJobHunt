@@ -11,7 +11,7 @@ const auth = require('./route/auth')
 const job = require('./route/job')
 const admin = require('./route/admin')
 
-const PORT = process.env.PORT || 5000;
+const port = process.env.PORT || 5000;
 
 // Middleware
 app.use(bodyParser.json());
@@ -51,7 +51,7 @@ connect();
 // when mongoose is connected
 mongoose.connection.once("open", () => {
     console.log("Mongo DB connected");
-    app.listen(PORT, () => console.log("App is running on", PORT));
+    app.listen(port, () => console.log("App is running on", port));
   });
   
 //   when mongoose throws an error
