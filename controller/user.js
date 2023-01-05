@@ -2,6 +2,7 @@ const User = require("../model/User");
 const asyncHandler = require("express-async-handler");
 const fs = require("fs");
 const Job = require("../model/Job");
+const Application = require("../model/Application");
 
 /**
  * getAllUser:  RESTful GET request returning all job objects
@@ -71,8 +72,8 @@ const deleteUser = asyncHandler(async (req, res, next) => {
     fs.unlinkSync(user.avatar);
   }
 
-  const deleteJob = await Job.deleteMany({userId:id})
-  if(deleteJob){
+  const deleteApplicantJob = await Application.deleteMany({userId:id})
+  if(deleteApplicantJob){
     const deleteUser = await User.findByIdAndDelete(id);
   
     if (!deleteUser)
