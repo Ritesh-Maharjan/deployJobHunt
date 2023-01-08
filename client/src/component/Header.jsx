@@ -45,10 +45,10 @@ function Header() {
   };
 
   return (
-    <div className="bg-black text-white rounded drop-shadow-xl relative z-10">
+    <div className="bg-black text-white drop-shadow-xl relative z-10">
       <div className="flex flex-col w-[90%] m-auto">
         <div className="flex w-full h-[10vh] justify-between items-center md:text-xl">
-          <h1 className="text-2xl font-bold md:text-3xl hover:border-b-4 ">
+          <h1 className="text-lg sm:text-2xl font-semibold md:text-3xl hover:border-b-4 ">
             <Link to="/">Job Hunt</Link>
           </h1>
           {isLoggedIn ? (
@@ -63,7 +63,7 @@ function Header() {
               <div
                 className={`${
                   displayMenu ? "absolute" : "hidden"
-                } right-0 bg-white rounded-md shadow-xl w-44`}
+                } right-0 bg-white rounded-md shadow-xl w-32 md:w-44`}
                 ref={menuEl}
               >
                 <Link
@@ -101,7 +101,7 @@ function Header() {
               </div>
             </div>
           ) : (
-            <ul className="flex justify-around w-[10rem]">
+            <ul className="flex justify-around w-32 text-sm md:text-lg md:w-[10rem]">
               <Link to="signup">
                 <li className="hover:border-b-4">Sign Up</li>
               </Link>

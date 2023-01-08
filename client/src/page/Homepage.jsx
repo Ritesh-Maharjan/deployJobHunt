@@ -39,8 +39,8 @@ function Homepage() {
             type="text"
             name="search"
             ref={searchInput}
-            placeholder="Search"
-            className="border-2 w-full p-2 rounded-2xl drop-shadow-lg"
+            placeholder="Search by title or category"
+            className="border-2 w-full p-2 rounded-2xl drop-shadow-lg text-sm"
           />
           <button
             onClick={submitSearch}
@@ -66,20 +66,22 @@ function Homepage() {
           <div className="flex justify-end w-full my-2">
             <Link
               to="addjob"
-              className="border-2 p-2 rounded-2xl drop-shadow-lg hover:text-white hover:bg-black"
+              className="border-2 p-2 w-20 font-semibold md:w-28 text-center rounded-2xl relative hover:text-white hover:bg-black text-sm lg:text-xl"
             >
               Add job
             </Link>
           </div>
         )}
         {isLoading ? (
-          <Loading /> 
+          <Loading />
         ) : jobs?.length < 1 ? (
-          <div>
-            <h1 className="text-3xl font-black">No Jobs found</h1>
+          <div className="flex h-[70vh] items-center justify-center">
+            <h1 className="text-3xl tracking-tight font-bold">
+              Sorry!! No jobs found.
+            </h1>
           </div>
         ) : (
-          <div className="grid xl:grid-cols-2 w-full">
+          <div className="grid md:grid-cols-2 w-full">
             {jobs?.map((el) => {
               return <Card data={el} key={el._id} />;
             })}
