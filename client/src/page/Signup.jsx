@@ -72,7 +72,7 @@ function Signup() {
           }}
         >
           <Form className="w-[90vw] border-2 border-black rounded-lg shadow-2xl p-6 mt-2 m-auto">
-            <h1 className="font-bold text-3xl my-4">Sign up</h1>
+            <h1 className="font-bold text-2xl lg:text-3xl my-4">Sign up</h1>
 
             <div className="my-4">
               <label className="block text-gray-500 font-bold" htmlFor="name">

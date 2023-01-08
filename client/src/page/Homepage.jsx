@@ -39,7 +39,7 @@ function Homepage() {
             type="text"
             name="search"
             ref={searchInput}
-            placeholder="Search by title or category"
+            placeholder="Search by title"
             className="border-2 w-full p-2 rounded-2xl drop-shadow-lg text-sm"
           />
           <button

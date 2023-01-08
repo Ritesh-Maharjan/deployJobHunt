@@ -121,7 +121,7 @@ function Profile() {
         user && (
           <div
             key={user._id}
-            className=" flex flex-col space-between border-2 m-2 p-2 rounded-2xl drop-shadow-lg"
+            className=" flex flex-col space-between border-2 p-2 m-auto rounded-2xl drop-shadow-lg"
           >
             <Formik
               initialValues={initialValues}
@@ -136,10 +136,10 @@ function Profile() {
                     {success}
                   </p>
                 )}
-                <h1 className="font-bold text-3xl my-4">Update your account</h1>
+                <h1 className="font-bold text-lg lg:text-3xl my-4">Update your account</h1>
 
                 <div className="my-4">
-                  <label className="block text-gray-500 font-bold">
+                  <label htmlFor="email" className="block text-gray-500 font-bold">
                     Email:
                   </label>
                   <div>
@@ -147,6 +147,7 @@ function Profile() {
                       className="border-2 w-full p-2  "
                       type="email"
                       name="email"
+                      id="email"
                       placeholder="Enter your email"
                     />
                     <ErrorMessage name="email" render={renderError} />
@@ -154,7 +155,7 @@ function Profile() {
                 </div>
 
                 <div className="my-4">
-                  <label className="block text-gray-500 font-bold">
+                  <label htmlFor="phone" className="block text-gray-500 font-bold">
                     Phone:
                   </label>
                   <div>
@@ -162,6 +163,7 @@ function Profile() {
                       className="border-2 w-full p-2  "
                       type="number"
                       name="phone"
+                      id="phone"
                       placeholder="Enter your phone number"
                       onWheel={(e) => e.target.blur()}
                     />
@@ -180,6 +182,7 @@ function Profile() {
                   />
                 </div>
 
+
                 <button
                   type="submit"
                   className="border-2 my-4 px-5 py-2 hover:bg-black hover:text-white"
@@ -188,7 +191,7 @@ function Profile() {
                 </button>
                 <button
                   onClick={(e) => deleteAccBtn(e)}
-                  className="border-2 my-4 mx-4 px-5 py-2 bg-red-400 hover:bg-black hover:text-white"
+                  className="border-2 md:my-4 md:mx-4 px-5 py-2 bg-red-400 hover:bg-black hover:text-white"
                 >
                   Delete Account
                 </button>

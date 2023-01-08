@@ -61,9 +61,9 @@ function Users() {
               return (
                 <div
                   key={el._id}
-                  className=" flex items-center space-between border-2 m-2 p-2 rounded-2xl drop-shadow-lg hover:border-red-400"
+                  className=" flex flex-col md:flex-row md:items-center space-between border-2 m-2 p-2 rounded-2xl drop-shadow-lg hover:border-red-400"
                 >
-                  <div className="flex flex-col justify-center items-center px-2 mr-6 w-[20vw]">
+                  <div className="flex flex-col px-2 mr-6 w-20 lg:w-[20vw]">
                     {el?.avatar ? (
                       <img
                         src={`${IMAGE_URL}${el?.avatar}`}
@@ -79,18 +79,18 @@ function Users() {
                   </div>
                   <div className="text-xs lg:text-lg ml-4 w-full">
                     <h2 className="flex items-center">
-                      <span className="mr-3 w-32">Name: </span>
+                      <span className="mr-3 w-16 lg:w-32">Name: </span>
                       {el?.name}
                     </h2>
                     <h2 className="flex items-center">
-                      <span className="mr-3 w-32">Email: </span>
+                      <span className="mr-3 w-16 lg:w-32">Email: </span>
                       {el?.email}
                     </h2>
                     <h2 className="flex items-center">
-                      <span className="mr-3 w-32">Phone:</span> {el?.phone}
+                      <span className="mr-3 w-16 lg:w-32">Phone:</span> {el?.phone}
                     </h2>
                     <h2 className="flex items-center">
-                      <span className="mr-3 w-32">Roles:</span>
+                      <span className="mr-3 w-16 lg:w-32">Roles:</span>
                       {el?.roles}
                     </h2>
                     <button

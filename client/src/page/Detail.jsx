@@ -115,8 +115,8 @@ function Detail() {
             />
           ))}
         {job && (
-          <div className="flex flex-col md:flex-row items-center space-between border-2 m-2 p-2 rounded-2xl drop-shadow-lg text-xs md:text-base w-[450px] md:w-[600px]">
-            <div className="flex flex-col items-center justify-center w-16 my-2 sm:min-w-[100px] md:min-h-[140px] xl:min-h-[320px]">
+          <div className="flex flex-col md:flex-row md:items-center space-between border-2 m-2 p-2 rounded-2xl drop-shadow-lg text-xs md:text-base w-[450px] md:w-[600px]">
+            <div className="flex flex-col items-center justify-center w-16 my-2 ml-4 sm:min-w-[100px] md:min-h-[140px]">
               {job?.createdBy?.avatar ? (
                 <img
                   src={`${SERVER_URL}${job?.createdBy?.avatar}`}

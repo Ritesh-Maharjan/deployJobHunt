@@ -3,7 +3,6 @@ import * as Yup from "yup";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { getJob, updateJob } from "../api/jobApi";
 import { useSelector } from "react-redux";
-// import { useJwt } from "react-jwt";
 import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useEffect } from "react";
@@ -11,7 +10,7 @@ import Loading from "../component/Loading";
 
 function Update() {
   const token = useSelector((state) => state.auth.user);
-  const [success, setSuccess] = useState();
+  const [success, setSuccess] = useState(false);
   const [apiData, setApiData] = useState();
   const [isLoading, setIsLoading] = useState();
   const param = useParams();
@@ -93,11 +92,34 @@ function Update() {
           >
             <Form className="w-[90vw] border-2 border-black rounded-lg shadow-2xl p-6 m-auto">
               {success && (
-                <div
-                  className="p-4 mb-4 text-sm bg-green-100 rounded-lg dark:bg-green-200 dark:text-green-800"
-                  role="alert"
-                >
-                  <span className="font-medium">{success}</span>
+                <div className="fixed flex items-center justify-center h-full w-screen left-[50%] translate-x-[-50%] top-[50%] translate-y-[-50%] z-10 bg-gray-900 bg-opacity-50">
+                  <div
+                    className="p-4 mb-4 text-sm bg-green-100 rounded-lg dark:bg-green-200 dark:text-green-800 relative flex items-center justify-center min-h-[100px]"
+                    role="alert"
+                  >
+                    <div
+                      className="text-red-600 absolute top-0 right-0"
+                      onClick={() => setSuccess(false)}
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        strokeWidth={1.5}
+                        stroke="currentColor"
+                        className="w-5 h-5"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M6 18L18 6M6 6l12 12"
+                        />
+                      </svg>
+                    </div>
+                    <span className="lg:font-bold text-xl">
+                      Updated successfully!
+                    </span>
+                  </div>
                 </div>
               )}
 
